@@ -52,7 +52,7 @@
       						</div>
       						<div class="formprt">
       							<label for="gender">Gender</label>
-                                                <select name="cars" id="gender">
+                                                <select name="gender" id="gender">
                                                 <option value="male">Male</option>
                                                 <option value="female">Female</option>
                                                 <option value="others">Others</option>
@@ -101,7 +101,13 @@
 					data:{username:username,password:password,token:token},
 					success:function(data)
 					{
-						alert('data');
+						if(data==0)  {
+                            alert('login successfull');
+                            window.location="dashboard.php";
+                        }
+                        else{
+                            alert(data)
+                        }      
 					}
 				});
       			} else 
