@@ -6,7 +6,7 @@ if(isset($_POST['token']) && password_verify("logintoken",$_POST['token']))
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = $db ->prepare('Select from users where Name=?');
+    $query = $db ->prepare('SELECT * FROM users WHERE Name=?');
     $data = array($username);
     $execute = $query->execute($data);
     if($query->rowcount()>0)
